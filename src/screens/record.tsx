@@ -8,6 +8,7 @@ import { addMemo, setSelectedDate } from '../store'
 import { CoachId } from '../ui/coach'
 import { Icon } from '../ui/icons'
 import { Chevron, CountText, EntryButton, EntryIcon, HeaderTile, IconButton, MiniBattery, MiniMind, Screen } from '../ui/parts'
+import { isAndroid } from './android'
 import { MemoAddSheet } from './visitSheets'
 
 /** 記録タブ */
@@ -36,6 +37,7 @@ export function RecordScreen(p: {
         <h1 class="title-large">{mdw(day)}</h1>
         <IconButton icon="right" label="次の日" onClick={() => setSelectedDate(addDays(day, 1))} disabled={day >= t} />
         <span class="grow" />
+        {isAndroid() && <HeaderTile icon="star" label="Android 版に移る" onClick={() => navigate(routes.android)} />}
         <HeaderTile icon="help" label="ナビゲーションガイド" onClick={p.onHelp} coach={CoachId.RECORD_GUIDE} />
         <HeaderTile icon="gear" label="設定" onClick={() => navigate(routes.settings)} />
       </div>
@@ -60,7 +62,7 @@ export function RecordScreen(p: {
       {/* 睡眠: 記録があれば長さだけ。未記録は薄い灰色にして圧をかけない */}
       <EntryButton
         title={sr ? durJ(nightMin(sr)) : '睡眠'}
-        subtitle={!sr ? '未記録' : napMin(sr) > 0 ? `二度寝 ${durJ(napMin(sr))}` : null}
+        subtitle={sr && napMin(sr) > 0 ? `二度寝 ${durJ(napMin(sr))}` : null}
         icon="moon"
         muted={!sr}
         onClick={() => navigate(routes.sleep(day))}
@@ -70,7 +72,7 @@ export function RecordScreen(p: {
 
       {/* 調子: 未記録なら薄い灰色の入口、あればその日の行(押すと直す)と右上の件数＋ */}
       {conds.length === 0 ? (
-        <EntryButton title="調子" subtitle="未記録" icon="smile" muted onClick={() => navigate(routes.condition(day, null))} coach={CoachId.CONDITION} />
+        <EntryButton title="調子" icon="smile" muted onClick={() => navigate(routes.condition(day, null))} coach={CoachId.CONDITION} label="調子 未記録" />
       ) : (
         <ConditionBox conds={conds} onAdd={() => navigate(routes.condition(day, null))} onOpen={(r) => navigate(routes.condition(day, r.id))} />
       )}

@@ -8,9 +8,9 @@
       <stop offset="1" stop-color="#1C3654" />
     </linearGradient>
     <linearGradient id="glow" x1="54" y1="45" x2="54" y2="82" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#FFF0C2" stop-opacity="0.878" />
-      <stop offset="0.55" stop-color="#FFE6A3" stop-opacity="0.349" />
-      <stop offset="1" stop-color="#FFE6A3" stop-opacity="0.071" />
+      <stop offset="0" stop-color="#FFF6D6" stop-opacity="1" />
+      <stop offset="0.55" stop-color="#FFEAAE" stop-opacity="0.6" />
+      <stop offset="1" stop-color="#FFE6A3" stop-opacity="0.2" />
     </linearGradient>
   </defs>
   <g clip-path="url(#squircle)">

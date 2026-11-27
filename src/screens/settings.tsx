@@ -1,8 +1,9 @@
 import { useRef } from 'preact/hooks'
 import { COUN, DOC } from '../data/entities'
 import { kindsOf, type AppSettings } from '../data/settings'
-import { goBack } from '../nav'
+import { goBack, navigate, routes } from '../nav'
 import { exportBackup, importBackup, setUse } from '../store'
+import { isAndroid } from './android'
 import { Card, CardTitle, Chevron, Divider, EmptyText, Screen, SubTopRow } from '../ui/parts'
 
 /** 最後に書き出した日(11月20日) */
@@ -50,6 +51,14 @@ export function SettingsScreen({ settings }: { settings: AppSettings }) {
         <EmptyText text={'書き出すと共有画面が開きます。Google ドライブを選ぶと、ドライブに保存できます（iPhone は「"ファイル"に保存」から）。'} />
         <EmptyText text="読み込むと今の記録に足します（同じ記録は増えません）。書き出したファイルは Android 版（F-Droid）でも読み込めます。" />
       </Card>
+
+      {isAndroid() && (
+        <Card>
+          <CardTitle text="Android 版" />
+          <EmptyText text="お知らせや睡眠時刻の自動入力が使え、ブラウザのデータを消しても記録が残ります。" />
+          <SetRow title="Android 版に移る" onClick={() => navigate(routes.android)} />
+        </Card>
+      )}
     </Screen>
   )
 }

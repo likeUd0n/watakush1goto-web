@@ -2,6 +2,7 @@ import { useEffect, useState } from 'preact/hooks'
 import { kindLabel } from './data/entities'
 import { kindsOf } from './data/settings'
 import { openTab, useRoute } from './nav'
+import { AndroidScreen } from './screens/android'
 import { ConditionScreen } from './screens/condition'
 import { HistoryScreen } from './screens/history'
 import { InstallGuide, isStandalone } from './screens/installGuide'
@@ -66,6 +67,7 @@ export function App() {
       {route.name === 'condition' && <ConditionScreen key={`${route.date}/${route.id}`} data={data} date={route.date} id={route.id} page={route.page} />}
       {route.name === 'history' && <HistoryScreen data={data} />}
       {route.name === 'settings' && <SettingsScreen settings={settings} />}
+      {route.name === 'android' && <AndroidScreen />}
 
       {isTab && (
         <nav class="tabs" aria-label="タブ">

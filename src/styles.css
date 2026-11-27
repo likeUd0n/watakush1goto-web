@@ -322,6 +322,17 @@ hr.divider.inset {
 }
 
 /* ---- カード・入口 ---- */
+/* Android 版の案内の箇条書き。手順の中のボタンは文の下に置く */
+.android-list {
+  margin: 0;
+  padding-left: 1.4em;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.android-list li > .pill {
+  margin-top: 8px;
+}
 .card {
   background: var(--surface);
   border: 1px solid color-mix(in srgb, var(--line) 65%, transparent);

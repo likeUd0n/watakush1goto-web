@@ -31,6 +31,7 @@ export const icons = {
   list: { d: ['M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01'] },
   chart: { d: ['M4 19h16', 'M5 14l4-4 4 3 6-7'] },
   close: { d: ['M6 6l12 12M18 6L6 18'], width: 2 },
+  star: { d: ['M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.3-4.1 5.9-.9z'] },
 } satisfies Record<string, IconDef>
 
 export type IconName = keyof typeof icons

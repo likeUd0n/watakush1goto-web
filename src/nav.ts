@@ -9,6 +9,7 @@ export type Route =
   | { name: 'condition'; date: string; id: number | null; page: 1 | 2 }
   | { name: 'history' }
   | { name: 'settings' }
+  | { name: 'android' }
 
 export function parseRoute(hash: string): Route {
   const p = hash.replace(/^#\/?/, '').split('/')
@@ -25,6 +26,8 @@ export function parseRoute(hash: string): Route {
       return { name: 'history' }
     case 'settings':
       return { name: 'settings' }
+    case 'android':
+      return { name: 'android' }
   }
   return { name: 'record' }
 }
@@ -37,6 +40,7 @@ export const routes = {
   condition: (date: string, id: number | null | undefined) => `#/condition/${date}/${id ?? 'new'}`,
   history: '#/history',
   settings: '#/settings',
+  android: '#/android',
 }
 
 const routeListeners = new Set<() => void>()
