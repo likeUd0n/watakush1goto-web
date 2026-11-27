@@ -1,0 +1,16 @@
+node_modules/
+dist/
+dev-dist/
+*.log
+
+# ローカルのツール・一時ファイル
+.claude/settings.local.json
+.impeccable/
+
+# 秘密情報
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db

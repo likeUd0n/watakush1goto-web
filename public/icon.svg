@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="18 18 72 72" width="128" height="128" role="img" aria-label="わたくしごと アプリアイコン">
+  <defs>
+    <clipPath id="squircle">
+      <rect x="18" y="18" width="72" height="72" rx="16" ry="16" />
+    </clipPath>
+    <linearGradient id="bg" x1="54" y1="0" x2="54" y2="108" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#294D75" />
+      <stop offset="1" stop-color="#1C3654" />
+    </linearGradient>
+    <linearGradient id="glow" x1="54" y1="45" x2="54" y2="82" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFF0C2" stop-opacity="0.878" />
+      <stop offset="0.55" stop-color="#FFE6A3" stop-opacity="0.349" />
+      <stop offset="1" stop-color="#FFE6A3" stop-opacity="0.071" />
+    </linearGradient>
+  </defs>
+  <g clip-path="url(#squircle)">
+    <rect x="0" y="0" width="108" height="108" fill="url(#bg)" />
+    <path d="M52.7,18 L55.3,18 L55.3,33 L52.7,33 Z" fill="#A9C4E0" />
+    <path d="M41,45 L67,45 L79,82 L29,82 Z" fill="url(#glow)" />
+    <path d="M39,45 C39,34.5 46,30.5 54,30.5 C62,30.5 69,34.5 69,45 Z" fill="#FFFFFF" />
+  </g>
+</svg>
